@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddDbContext<RegisterFormDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString(connectionString!)));
+    options.UseSqlite(connectionString));
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
