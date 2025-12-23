@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using RegisterFormApp.Models;
+using RegisterForm.Api.Models;
 
-namespace RegisterFormApp.Data;
+namespace RegisterForm.Api.Data;
 
 public class AppDbContext : DbContext
 {

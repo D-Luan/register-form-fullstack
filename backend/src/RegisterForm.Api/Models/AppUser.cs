@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace RegisterFormApp.Models;
+namespace RegisterForm.Api.Models;
 
 public class AppUser
 {
