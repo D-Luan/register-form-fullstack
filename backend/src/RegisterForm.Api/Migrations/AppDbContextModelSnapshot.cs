@@ -3,21 +3,21 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using RegisterFormApp.Data;
+using RegisterForm.Api.Data;
 
 #nullable disable
 
-namespace RegisterFormApp.Migrations
+namespace RegisterForm.Api.Migrations
 {
-    [DbContext(typeof(RegisterFormDbContext))]
-    partial class RegisterFormDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(AppDbContext))]
+    partial class AppDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.0");
 
-            modelBuilder.Entity("RegisterFormApp.Models.Register", b =>
+            modelBuilder.Entity("RegisterForm.Api.Models.AppUser", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -47,7 +47,7 @@ namespace RegisterFormApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Registers");
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }

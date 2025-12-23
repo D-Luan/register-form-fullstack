@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RegisterFormApp.Models;
 
-public class Register
+public class AppUser
 {
     public int Id { get; set; }
 
