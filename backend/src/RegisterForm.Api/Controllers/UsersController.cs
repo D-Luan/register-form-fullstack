@@ -18,7 +18,7 @@ public class UsersController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create (CreateUserRequest request)
+    public async Task<IActionResult> Create(CreateUserRequest request)
     {
         var newUser = new AppUser
         {
@@ -67,5 +67,23 @@ public class UsersController : ControllerBase
         }
 
         return Ok(response);
-    } 
+    }
+
+    [HttpGet]
+    public async Task<ActionResult<List<UserResponse>>> GetAll()
+    {
+        var response = await _dbContext.Users
+            .Select(u => new UserResponse
+            {
+                Id = u.Id,
+                Name = u.Name,
+                BirthDate = u.BirthDate,
+                City = u.City,
+                State = u.State,
+                Email = u.Email
+            })
+            .ToListAsync();
+
+        return Ok(response);
+    }   
 }
